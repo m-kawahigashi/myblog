@@ -1,0 +1,18 @@
+<div class="contents row">
+  <%= form_for @blog do |f| %>
+    <h3>
+      投稿する
+    </h3>
+      <h5 class="card-panel hoverable" >
+        <%= f.label(:image, "フォト" ) %>
+        <%= f.text_field :image, placeholder: "image URL" %>
+      </h5>
+      <h5 class="card-panel hoverable">
+        <%= f.label :text, "つぶやき" %>
+        <%= f.text_field :text, placeholder: "text" %>
+      </h5>
+      <%= f.submit "投稿する"%>
+  <% end %>
+
+  <%= link_to "戻る", blogs_path %>
+</div>

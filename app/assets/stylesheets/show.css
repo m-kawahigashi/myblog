@@ -1,0 +1,19 @@
+.p-name{
+  float: right;
+  font-size: 35px;
+}
+.content_post{
+  padding: 10px;
+  font-size: 30px;
+  background-size: cover;
+  height: 300px;
+}
+
+.my-text{
+  color: antiquewhite;
+  margin-top: 34%;
+}
+
+.pagination{
+  margin-top: 15px;
+}

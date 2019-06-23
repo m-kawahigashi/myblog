@@ -1,0 +1,56 @@
+    <nav style="padding: 0 5px;" class="#00e5ff cyan accent-3 top">
+      <div class="nav-wrapper ">
+        <a href="/" class="brand-logo center">mini blog</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <% if user_signed_in? %>
+        <span class="name"><%= current_user.nickname %>
+        </span>
+            <ul class="user__info">
+              <li><a href="/users/<%= current_user.id %>">マイページ</a>
+              <li><a class="post" href="/blogs/new">投稿する</a></li>
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+              </li>
+            </ul>
+        <% else %>
+            <%= link_to "ログイン", new_user_session_path, class: 'post' %>
+            <%= link_to "新規登録", new_user_registration_path, class: 'post'%>
+        <% end %>
+        </ul>
+      </div>
+    </nav>
+    <p id="notice"></p>
+  <div class="contents row">
+    <div class="col s12 m6 offset-m3">
+    <% @blogs.each do |blog| %>
+    <div class="flow-text" style="background-image: url(<%= blog.image %>);">
+      <% if user_signed_in? && current_user.id == blog.user_id %>
+       <div class="more">
+          <ul class="more_list">
+            <li>
+              <%= link_to '編集', "/blogs/#{blog.id}/edit", method: :get %>
+            </li>
+            <li>
+              <%= link_to '削除', "/blogs/#{blog.id}", method: :delete %>    
+            </li>
+          </ul>
+        </div>
+        <% end %>
+        <div class="text">
+          <%= simple_format(blog.text) %>
+        </div>
+        <div class="contributor">
+        <a href="">
+            <span>投稿者</span><%= blog.user.nickname %>
+          </a>
+        </div>
+      </div>
+    <% end %>
+  
+<div class="container center" style="margin-bottom: 50px;">
+  
+  <ul class="pagination">
+  <%= paginate(@blogs) %>
+  </ul>
+</div>
+
+ <script type="text/javascript" src="js/materialize.min.js"></script>

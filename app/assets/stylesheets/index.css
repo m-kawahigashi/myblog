@@ -1,0 +1,68 @@
+ 
+ .top {
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  z-index: 8;
+}
+
+.card-panel{
+  opacity: 0.8;
+}
+
+.field{
+  opacity: 0.8;
+  background-color: white;
+}
+
+.offset-m3{
+  margin-top: 60px;
+}
+
+.name{
+  font-size: 30px;
+}
+
+body {
+  background-image: url("ball.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.flow-text{
+  padding: 10px;
+  font-size: 30px;
+  background-size: cover;
+  height: 300px;
+}
+
+.more{
+  opacity: 0.5;
+  float: right;
+  margin-top: 31%;
+}
+
+.text{
+  margin-top: 100px;
+  font-size: 30px;
+  color: aliceblue;
+}
+
+.contributor{
+  margin-top: 110px;
+  opacity: 0.5;
+}
+
+ul {
+  display: flex;
+}
+
+.pagination {
+  background-color: #b0bec5;
+}
+
+.white{
+  background: white;
+  opacity: 0.8;
+}

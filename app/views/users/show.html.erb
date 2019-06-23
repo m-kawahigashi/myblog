@@ -1,0 +1,14 @@
+<div class="contents row" >
+  <div class="p-name">
+    <p><%= @name %>さんの投稿一覧</p>
+  </div>
+    <div class="col s12 m6 offset-m3">
+    <% @blogs.each do |blog| %>
+      <div class="content_post" style="background-image: url(<%= blog.image %>);">
+        <div class="my-text">
+          <%= simple_format(blog.text) %>
+        </div>
+      </div>
+    <% end %>
+    <%= paginate(@blogs) %>
+  </div>
